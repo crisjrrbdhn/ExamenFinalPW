@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/ejercicio1.css">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <h1>Calculo de Compras</h1>
+    <form method="post" action="{{ url_for('ejercicio1') }}">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" required><br>
+
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad" required><br>
+
+        <label for="tarros_pintura">Ingresa la cantidad de tarros de pintura a comprar:</label>
+        <input type="number" name="tarros_pintura" required><br>
+
+        <input type="submit" value="Calcular">
+        <h1>Resultado</h1>
+        <p>Nombre: {{ nombre }}</p>
+        <p>Total sin descuento: ${{ total_sin_descuento }}</p>
+        <p>El descuento es: ${{ total_sin_descuento * descuento }}</p>
+        <p>Total con descuento: ${{ total_con_descuento }}</p>
+        <a href="{{ url_for('index') }}">Volver al inicio</a>
+    </form>
+</body>
+</html>
